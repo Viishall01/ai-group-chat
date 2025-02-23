@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaPlus } from 'react-icons/fa';
 import axios from '../config/axios';
+import { UserContext } from '../context/user.context';
 
 const Home = () => {
+    const {user} = useContext(UserContext);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [projectName, setProjectName] = useState('');
     const [projects, setProjects] = useState([]);
@@ -13,7 +15,7 @@ const Home = () => {
         axios.get('/projects/all')
             .then((res) => setProjects(res.data.projects))
             .catch(err => console.log(err));
-    }, []);
+    }, [user]);
 
     const createProject = (e) => {
         e.preventDefault();

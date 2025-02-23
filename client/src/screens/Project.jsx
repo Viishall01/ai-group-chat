@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useContext, useRef } from 'react'
 import { UserContext } from '../context/user.context'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import axios from '../config/axios'
 import { disconnectSocket, initializeSocket, receiveMessage, sendMessage } from '../config/socket'
 import Markdown from 'markdown-to-jsx'
+import axiosInstance from '../config/axios'
 
 const Project = () => {
 
     const location = useLocation()
+    const navigate = useNavigate()
 
     const [ isSidePanelOpen, setIsSidePanelOpen ] = useState(false)
     const [ isModalOpen, setIsModalOpen ] = useState(false)
@@ -94,6 +96,11 @@ const Project = () => {
         messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }, [messages]);
 
+    const handleLogout = () => {
+        axiosInstance.get('/users/logout');
+        localStorage.removeItem("token");
+        navigate("/login"); // Redirect to login page
+    };
 
     
     return (
@@ -169,7 +176,7 @@ const Project = () => {
                             </li>
                         ))}
                     </ul>
-                    <button onClick={() => console.log('Logout clicked')} className="mt-6 w-full py-2 bg-red-600 hover:bg-red-500 rounded-lg text-white font-semibold">
+                    <button  onClick={handleLogout} className="mt-6 w-full py-2 bg-red-600 hover:bg-red-500 rounded-lg text-white font-semibold">
                         Logout
                     </button>
                 </div>

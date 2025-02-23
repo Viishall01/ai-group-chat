@@ -11,14 +11,8 @@ const Login = () => {
       const [ password, setPassword ] = useState('');
       const [ loading, setLoading ] = useState(false);
       const [ error, setError ] =  useState();
-      
       const { setUser } = useContext(UserContext)
-      const navigate = useNavigate()
-  
-  useEffect(()=>{
-    // const isLoggedIn =JSON.parse(localStorage.getItem("token"));
-      // if(isLoggedIn) navigate("/");
-  },[])
+      const navigate = useNavigate();
 
   const submitHandler = async (e) => {
     

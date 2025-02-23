@@ -61,7 +61,7 @@ const Home = () => {
                                 placeholder="Enter Group Name"
                                 value={projectName}
                                 onChange={(e) => setProjectName(e.target.value)}
-                                className="w-full bg-neutral-900 p-3 rounded-md mb-4 outline-none text-white"
+                                className="w-full bg-neutral-900 p-3 rounded-md mb-4 outline-none"
                                 required
                             />
                             <div className="flex justify-end gap-3">

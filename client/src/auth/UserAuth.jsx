@@ -14,12 +14,14 @@ const UserAuth = ({children}) => {
             setLoading(false);
         }
 
+        if(token) setLoading(false);
+
         if(!token){
             navigate('/login');
         }
-        if(!user){
-            navigate("/login")
-        }
+        // if(!user){
+        //     navigate("/login")
+        // }
     },[]);
 
     if (loading){

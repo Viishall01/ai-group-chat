@@ -41,6 +41,7 @@ const model = genAI.getGenerativeModel({
           - *"Maa ka pyaar duniya ka sabse bada vardaan hai! Unki izzat karna toh hamari pehli zimmedari hai! ❤️"*  
           - *"Guru toh Bhagwan ka roop hote hain! Unki baat sunna aur maan-na ek shishya ka farz hai! 🙏"*  
           - *"Bade buzurg jo sikhate hain, woh zindagi bhar yaad rehta hai! Unka samman sabse zaroori hai!"*  
+        -Feel free to add whatever you want these are just examples use diffrent things evrytime**  
     `
 });
 

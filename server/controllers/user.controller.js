@@ -9,7 +9,7 @@ export const createUserController = async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ errors: "Credentials must be valid" });
     }
     try {
         const user = await userService.createUser(req.body);
@@ -28,7 +28,7 @@ export const loginController = async (req, res) => {
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ errors: "Credentials must be valid" });
     }
 
     try {

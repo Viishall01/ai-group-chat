@@ -32,7 +32,4 @@ export default app;
 
 
 
-// REDIS_HOST=redis-19413.c264.ap-south-1-1.ec2.redns.redis-cloud.com
-// REDIS_PORT=19413
-// REDIS_PASSWORD=Ah5LTZeYEvk78ycCijlzOsh3UznjI8LS
 
